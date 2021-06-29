@@ -32,6 +32,7 @@ namespace ConsoleApp7
 
                 }
             }
+
             List<StudentModel> swappedStudens = universityManager
                                    .SwapFromStudentToTeacher(swappedTeachers, students);
             for (int i = 0; i < swappedStudens.Count; i++)

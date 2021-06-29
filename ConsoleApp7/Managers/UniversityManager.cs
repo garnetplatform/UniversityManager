@@ -40,13 +40,9 @@ namespace ConsoleApp7.Managers
                 Guid curStudentId = students[i]._id;
                 for (int j = 0; j < teachers.Count; j++)
                 {
-                    for (int k = 0; k < teachers[j]._students.Count; k++)
-                    {
-                        if (curStudentId == teachers[j]._students[k]._id)
-                        {
-                            students[i]._teacher = teachers[j];
-                        }
-                    }
+                    var res = teachers[j]._students.FirstOrDefault(x => x._id == curStudentId);
+                    if(res!=null)
+                     students[i]._teacher = teachers[j];
                 }
             }
             return students;
