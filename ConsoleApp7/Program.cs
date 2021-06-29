@@ -21,7 +21,7 @@ namespace ConsoleApp7
             List<TeacherModel> swappedTeachers = universityManager
                                              .SwapFromTeacherToStudent(teachers, students);
             Console.WriteLine("students");
-            for (int i = 0; i < teachers.Capacity; i++)
+            for (int i = 0; i < teachers.Count; i++)
             {
                 Console.WriteLine("Teacher**************************************");
                 Console.WriteLine($"id - {teachers[i]._id} age - {teachers[i]._age} name - {teachers[i]._name} bd - {teachers[i]._birthDate}");
@@ -34,7 +34,7 @@ namespace ConsoleApp7
             }
             List<StudentModel> swappedStudens = universityManager
                                    .SwapFromStudentToTeacher(swappedTeachers, students);
-            for (int i = 0; i < swappedStudens.Capacity; i++)
+            for (int i = 0; i < swappedStudens.Count; i++)
             {
                 Console.WriteLine("Student**************************************");
                 Console.WriteLine($"id - {swappedStudens[i]._id} age - {swappedStudens[i]._age} name - {swappedStudens[i]._name} bd - {swappedStudens[i]._birthDate}");

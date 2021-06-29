@@ -13,7 +13,7 @@ namespace ConsoleApp7.Managers
         {
             List<StudentModel> students = new List<StudentModel>(count);
             Random rnd = new Random();
-            for (int i = 0; i < students.Capacity; i++)
+            for (int i = 0; i < count; i++)
             {
                 var student = new StudentModel(rnd.Next(16, 80), $"st-{i + 1}", DateTime.Now.Date, Guid.NewGuid());
                 students.Add(student);

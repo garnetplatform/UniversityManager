@@ -11,9 +11,9 @@ namespace ConsoleApp7.Managers
     {
         public List<TeacherModel> SwapFromTeacherToStudent(List<TeacherModel> teachers, List<StudentModel> students)
         {
-            int studentsCount = students.Capacity / teachers.Capacity;
-            int lastTeacherStCount = students.Capacity % teachers.Capacity + studentsCount;
-            int filledTeacherCount = teachers.Capacity - 1;
+            int studentsCount = students.Count / teachers.Count;
+            int lastTeacherStCount = students.Count % teachers.Count + studentsCount;
+            int filledTeacherCount = teachers.Count - 1;
             for (int i = 0; i < filledTeacherCount; i++)
             {
                 teachers[i]._students = new List<StudentModel>(studentsCount);
@@ -35,12 +35,12 @@ namespace ConsoleApp7.Managers
         }
         public List<StudentModel> SwapFromStudentToTeacher(List<TeacherModel> teachers, List<StudentModel> students)
         {
-            for (int i = 0; i < students.Capacity; i++)
+            for (int i = 0; i < students.Count; i++)
             {
                 Guid curStudentId = students[i]._id;
-                for (int j = 0; j < teachers.Capacity; j++)
+                for (int j = 0; j < teachers.Count; j++)
                 {
-                    for (int k = 0; k < teachers[j]._students.Capacity; k++)
+                    for (int k = 0; k < teachers[j]._students.Count; k++)
                     {
                         if (curStudentId == teachers[j]._students[k]._id)
                         {
